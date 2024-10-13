@@ -7,35 +7,38 @@
 :root{
     font-size: 62.5%;
 
-    --body-background: #000;
-    --text-color: #E1E1E6; 
-    --border-color: 1px solid #4A808C;
-    --background-header-input: #06181C;
-    --background-header-button: #065E7C;
-    --background-header-button-hover: #FFF;
-    --text-header-button: #FFF;
-    --text-header-button-hover: #065E7C;
-    --background-thead: #092D38;
-    --background-primary-tr: #06181C;
-    --background-secondary-tr: rgba(6, 22, 27, 0.50);
-    --text-remove: #F75A68;
-    --background-noFavorites: #030B0D;
+    --body-background: #141126;
+    --app-background: #E0DFF2;
+
+    --text-color: #E0DFF2;
+    --text-logo: #141126;
+    --text-remove: #7C7EA6;
     --text-noFavorites: #4E5455;
+
+    --background-header-input: #141126;
+    --background-header-button: #141126;
+    --background-header-button-hover: #7C7EA6;
+    
+    --background-thead: #7C7EA6;
+    --background-tr: #141126;
+    
+    --background-noFavorites: #030B0D;
+    
     --scrollbar: #06181C;
     --scrollbar-thumb:#4A808C;
 }
 
 body {
-    background-color: var(--body-background);
-    height: 100vh;     
-    padding: 10rem 1rem;
+    background-color: var(--body-background);     
+    padding: 7rem 6rem;
 }
 
 body * {
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 00;
     font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-color);
+    font-weight: 500;
+    color: var(--text-input);
 }
 
 .sr-only {
@@ -51,74 +54,122 @@ body * {
 }
 
 #app {
-    max-width: 112rem;
-    margin: auto;
-    padding-bottom: 10rem;
+    max-width: 100rem;
+    padding: 5rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+    background: var(--app-background);
+    box-shadow: rgba(6, 6, 12, 0.25) 0px 50px 100px -20px, rgb(0, 0, 0) 0px 30px 60px -30px, rgba(10, 37, 64, 0.925) 0px -2px 6px 0px inset;
 }
+
+                                                        /* header desktop  */
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 6.5rem;
+    margin-bottom: 3rem;
 }
 
-header img {
-    width: 18.6rem;
+header .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 35rem;
+    gap: 1rem;
+}
+
+header .logo h1{
+    font-size: 4.2rem;
+    font-weight: 500;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    color: var(--text-logo);
+}
+
+
+header .logo img {
+    width: 3.5rem;
 }
 
 header .search {
     display:flex;
     align-items: center;
-    gap: .8rem;
+    width: 100%;
+    gap: 1rem;
 }
 
 header .search input {
     font-weight: 400;
-    width: 46.2rem;
-    height: 4.8rem;
+    color: var(--text-color);
+
+    width: 100%;
+    
+    height: 4.2rem;
     padding: 1.6rem;
-    border: var(--border-color);
-    border-radius: .5rem;
+    
+    border-radius: 1rem;
     background: var(--background-header-input);
+
 }
 
 header .search input::placeholder {
     font-size: 1.6rem;
     font-weight: 400;
+    color:var(--text-color);
 }
 
 header .search button {
-    width: 17rem;
-    height: 4.8rem;
-    padding: 1.2rem 3.2rem;
-    border: none;
-    border-radius: .5rem;
-    background: var(--background-header-button);
-
     display: flex;
     align-items: center;
-    gap: .8rem;
+    justify-content: center;
+    gap: 0.8rem;
 
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--text-header-button);
+    width: 14rem;
+    height: 4.2rem;
+    padding: 1.2rem 1.2rem;
+    border: none;
+    border-radius: 1rem;
+    background: var(--background-header-button);
+    
+    font-size: 1.6rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: var(--text-color);
 
     cursor: pointer;
 }
 
 header .search button:hover {
     background: var(--background-header-button-hover);
-    color: var(--text-header-button-hover);
+    color: var(--text-color);
 }
 
 header .search button:hover svg g path{
-    fill: var(--text-header-button-hover);
+    fill: var(--text-color);
 }
+
+header .search button img {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+                                                        /* header mobile  */
+
+@media (max-width: 1020px) {
+
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+
+}
+
 
 main {
     border-radius: 1rem;
-    border: var(--border-color);
     overflow: hidden;
 }
 
@@ -163,7 +214,6 @@ table {
 
 table thead {
     background: var(--background-thead);
-    border-bottom: var(--border-color);
 }
 
 table thead th {
@@ -171,16 +221,9 @@ table thead th {
     text-align: left;
 }
 
-table tbody tr:nth-child(even) {
-    background-color: var(--background-primary-tr);
-}
-
-table tbody tr:nth-child(odd) {
-    background-color: var(--background-secondary-tr);
-}
-
 table tbody tr {
-    border-top: var(--border-color);
+    color: var(--text-color);
+    background-color: var(--background-tr);
 }
 table tbody td {
     padding: 2.4rem 4rem;
