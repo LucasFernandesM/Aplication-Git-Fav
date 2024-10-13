@@ -30,7 +30,7 @@
 
 body {
     background-color: var(--body-background);     
-    padding: 7rem 6rem;
+    padding: 4rem 6rem;
 }
 
 body * {
@@ -54,7 +54,7 @@ body * {
 
 #app {
     max-width: 100rem;
-    padding: 5rem;
+    padding: 3rem 4rem;
     margin: 0 auto;
     border-radius: 2rem;
     background: var(--app-background);
@@ -65,7 +65,9 @@ body * {
 
 header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    gap: 1.5rem;
     align-items: center;
     margin-bottom: 3rem;
 }
@@ -92,6 +94,10 @@ header .logo img {
     width: 3.5rem;
 }
 
+header p {
+    font-size: 1.8rem;
+}
+
 header .search {
     display:flex;
     align-items: center;
@@ -110,7 +116,7 @@ header .search input {
     
     border-radius: 1rem;
     background: var(--background-header-input);
-
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 header .search input::placeholder {
@@ -137,6 +143,7 @@ header .search button {
     font-weight: 500;
     color: var(--text-color);
 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
 }
 
@@ -173,6 +180,10 @@ header .search button img {
         gap: 2rem;
     }
 
+    header p {
+        text-align: center;
+    }
+
     header .logo h1{
         font-size: 3.6rem;
     }
@@ -194,6 +205,9 @@ main {
     max-width: 100rem;
     border-radius: 1rem;
     overflow: hidden;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
 }
 
 
