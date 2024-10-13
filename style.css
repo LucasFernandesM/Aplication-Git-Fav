@@ -24,8 +24,8 @@
     
     --background-noFavorites: #030B0D;
     
-    --scrollbar: #06181C;
-    --scrollbar-thumb:#4A808C;
+    --scrollbar: #141126;
+    --scrollbar-thumb:#7C7EA6;
 }
 
 body {
@@ -35,9 +35,8 @@ body {
 
 body * {
     font-family: "Montserrat", sans-serif;
-    font-weight: 00;
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 1.6rem;
+    font-weight: 400;
     color: var(--text-input);
 }
 
@@ -74,6 +73,7 @@ header {
 header .logo {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     min-width: 35rem;
     gap: 1rem;
@@ -154,9 +154,18 @@ header .search button img {
     height: 1.8rem;
 }
 
+                                                        /* header desktop  */
+
                                                         /* header mobile  */
 
 @media (max-width: 1020px) {
+    body {     
+        padding: 3rem 2rem;
+    }
+
+    #app {
+        padding: 2rem;
+    }
 
     header {
         display: flex;
@@ -164,75 +173,93 @@ header .search button img {
         gap: 2rem;
     }
 
+    header .logo h1{
+        font-size: 3.6rem;
+    }
 
+    header .search button {
+        font-size: 1.4rem;
+    }
+
+    header .search button img {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
 }
+
+                                                        /* header mobile  */
 
 
 main {
+    max-width: 100rem;
     border-radius: 1rem;
     overflow: hidden;
 }
 
 
-/*scroll settings*/
-
-table thead, table tbody{
-    display: block;  
-}
-  
-tbody{  
-    overflow: hidden;
-    overflow-y: scroll;
-    max-height: 40rem;
-}
-
-table thead th:first-child, table tbody td:first-child {
-    width: 40rem;
-}
-
-table thead th, table tbody td {
-    width: 24rem;
-}
+                                            /*scroll settings*/
 
 ::-webkit-scrollbar {
-    width: .7rem; 
+    width: .5rem; 
     background-color: var(--scrollbar);
 }
    
 ::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-thumb);
-    border-radius: .3rem;
+    border-radius: 1rem;
 }
 
-/*scroll settings*/
+                                            /*scroll settings*/
 
+                                            /*table desktop*/
 
 table {
     width: 100%;
     border-collapse: collapse; 
+
+    font-size: 1.4rem;
 }
 
 table thead {
     background: var(--background-thead);
+    width: 100%;
+}
+
+table tbody {
+    width: 100%;
 }
 
 table thead th {
-    padding: 1.6rem 4rem;
-    text-align: left;
+    padding: 1.5rem 1rem;
+    width: 25%;
+    min-width: 10rem;
+    max-width: 25rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+table tbody td {
+    padding: 1rem 1rem;
+    width: 25%;
+    min-width: 10rem;
+    max-width: 25rem;
+    text-align: center;
 }
 
 table tbody tr {
     color: var(--text-color);
     background-color: var(--background-tr);
 }
-table tbody td {
-    padding: 2.4rem 4rem;
-}
+
 
 table tbody .user {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
     align-items: center;
-    gap: 1.6rem;
+    gap: 1rem;
 }
 
 table tbody .user img {
@@ -255,6 +282,38 @@ table tbody button {
     color: var(--text-remove);
     cursor: pointer;
 }
+
+                                            /*table desktop*/
+
+                                            /*table mobile*/
+
+@media (max-width: 768px) {
+    body {     
+        padding: 3rem 0.5rem;
+    }
+
+    table thead th {
+        font-size: 1.6rem;
+        padding: 1rem 0.5rem;
+    }
+
+    table tbody td {
+        padding: 1rem 0.5rem;
+    }
+} 
+
+@media (max-width: 500px) {
+    table {
+        display: block;  
+    }
+  
+    table{  
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+}
+
+                                            /*table mobile*/
 
 .noFavorites {
     background: var(--background-noFavorites);
