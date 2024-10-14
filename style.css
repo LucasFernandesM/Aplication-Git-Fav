@@ -57,7 +57,7 @@ main {
                                             /* Banner */
 .banner {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(./assets/backgroundBanner.jpg);
     background-position-y: 68%;
     background-repeat: no-repeat;
@@ -354,6 +354,9 @@ table tbody button {
 
                                             /* Banner mobile  */
 @media (max-width: 768px) {
+    .banner {
+        justify-content: right;
+    }
     .logo img {
         width: 5rem;
         height: 5rem;
@@ -375,7 +378,7 @@ table tbody button {
         font-size: 4.5rem;
     }
 
-    .coontainer .text .description {
+    .container .text .description {
         gap: 1rem;
     }
 
