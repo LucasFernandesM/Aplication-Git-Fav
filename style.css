@@ -54,8 +54,7 @@ main {
     background: var(--app-background);
     box-shadow: rgba(6, 6, 12, 0.25) 0px 50px 100px -20px, rgb(0, 0, 0) 0px 30px 60px -30px, rgba(10, 37, 64, 0.925) 0px -2px 6px 0px inset;
 }
-
-                                            /* Banner desktop  */
+                                            /* Banner */
 .banner {
     width: 100%;
     height: 100vh;
@@ -85,11 +84,15 @@ main {
     width: 100%;
     max-width: 100rem;
     background: transparent;
-    backdrop-filter: blur(0rem);
     box-shadow: rgba(0, 0, 0, 0.288) 0px 5px 15px; 
     overflow: hidden;
-    
+
+    backdrop-filter: blur(0rem);
     transition: 1s;
+}
+
+.container:hover {
+    backdrop-filter: blur(1rem);
 }
 
 .container .text {
@@ -99,12 +102,8 @@ main {
     padding: 5rem;
 
     position: relative;
-    top: 500px;
+    top: 0;
     transition: top 1s;
-}
-
-.container:hover {
-    backdrop-filter: blur(1rem);
 }
 
 .container:hover .text {
@@ -141,57 +140,8 @@ main {
     font-weight: 500;
     color: var(--text-title);
 }
-                                            /* Banner desktop  */
-
-                                            /* Banner mobile  */
-@media (max-width: 768px) {
-    .logo img {
-        width: 5rem;
-        height: 5rem;
-    }
-
-    .container .text {
-        flex-direction: column;
-        padding: 2rem;
-        text-align: center;
-    }
-
-    .container .text h1 {
-        font-size: 5rem;
-        line-height: 4.5rem;
-        margin-bottom: -2rem;
-    }
-
-    .container .text h1 span {
-        font-size: 5rem;
-    }
-
-    .coontainer .text .description {
-        gap: 1rem;
-    }
-
-    .container .text .description h2 {
-        font-size: 2rem;
-    }
-
-    .container .text .description p {
-        font: 1.6rem;
-    }
-
-} 
-
-@media (max-width: 500px) {
-    .banner {
-        gap: 1rem;
-    }
-
-    .container .text {
-        padding: 2rem 1rem;
-    }
-}
-                                            /* Banner mobile  */
-
-                                            /* FavoritesHeader desktop  */
+                                            /* Banner */
+                                            /* FavoritesHeader */
 .favoritesHeader {
     display: flex;
     flex-direction: column;
@@ -271,41 +221,8 @@ main {
     width: 1.8rem;
     height: 1.8rem;
 }
-                                            /* FavoritesHeader desktop  */
-
-                                            /* FavoritesHeader mobile  */
-@media (max-width: 1020px) {
-    #app {
-        padding: 2rem;
-        margin: 2rem;
-    }
-
-    .favoritesHeader {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .favoritesHeader h2{
-        font-size: 3.6rem;
-    }
-
-    .favoritesHeader p {
-        text-align: center;
-    }
-
-    .favoritesHeader .search button {
-        font-size: 1.4rem;
-    }
-
-    .favoritesHeader .search button img {
-        width: 1.4rem;
-        height: 1.4rem;
-    }
-}
-                                            /* header mobile  */
-
-                                            /*FavoritesTable desktop*/
+                                            /* FavoritesHeader */
+                                            /* FavoritesTable */
 .favorites {
     max-width: 100rem;
     border-radius: 1rem;
@@ -382,33 +299,8 @@ table tbody button {
     color: var(--text-remove);
     cursor: pointer;
 }
-                                            /*FavoritesTable desktop*/
-
-                                            /*FavoritesTable mobile*/
-@media (max-width: 768px) {
-    table thead th {
-        font-size: 1.6rem;
-        padding: 1rem 0.5rem;
-    }
-
-    table tbody td {
-        padding: 1rem 0.5rem;
-    }
-} 
-
-@media (max-width: 500px) {
-    table {
-        display: block;  
-    }
-  
-    table{  
-        overflow: hidden;
-        overflow-x: scroll;
-    }
-}
-                                            /*FavoritesTable mobile*/
-
-                                            /*NoFavorites desktop*/
+                                            /*FavoritesTable */
+                                            /*NoFavorites*/
 .noFavorites {
     background: var(--background-noFavorites);
     display: flex;
@@ -431,8 +323,133 @@ table tbody button {
 .hide {
     display: none;
 }
-                                            /*NoFavorites desktop*/
+                                            /* NoFavorites */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+                                            /*scroll settings*/
+::-webkit-scrollbar {
+    width: .7rem; 
+    width: .5rem; 
+    background-color: var(--scrollbar);
+}
 
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: .3rem;
+    border-radius: 1rem;
+}
+                                            /*scroll settings*/
+
+                                            /* Banner mobile  */
+@media (max-width: 768px) {
+    .logo img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .container .text {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .container .text h1 {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+        margin-bottom: -2rem;
+    }
+
+    .container .text h1 span {
+        font-size: 4.5rem;
+    }
+
+    .coontainer .text .description {
+        gap: 1rem;
+    }
+
+    .container .text .description h2 {
+        font-size: 2rem;
+    }
+
+    .container .text .description p {
+        font: 1.6rem;
+    }
+
+} 
+
+@media (max-width: 500px) {
+    .banner {
+        gap: 1rem;
+    }
+
+    .container .text {
+        padding: 2rem 1rem;
+    }
+}
+                                            /* Banner mobile  */
+                                            /* FavoritesHeader mobile  */
+@media (max-width: 1020px) {
+    #app {
+        padding: 2rem;
+        margin: 2rem;
+    }
+
+    .favoritesHeader {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .favoritesHeader h2{
+        font-size: 3.6rem;
+    }
+
+    .favoritesHeader p {
+        text-align: center;
+    }
+
+    .favoritesHeader .search button {
+        font-size: 1.4rem;
+    }
+
+    .favoritesHeader .search button img {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+}
+                                            /* FavoritesHeader mobile  */                                          
+                                            /* FavoritesTable mobile*/
+@media (max-width: 768px) {
+    table thead th {
+        font-size: 1.6rem;
+        padding: 1rem 0.5rem;
+    }
+
+    table tbody td {
+        padding: 1rem 0.5rem;
+    }
+} 
+
+@media (max-width: 500px) {
+    table {
+        display: block;  
+    }
+    
+    table{  
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+}
+                                            /*FavoritesTable mobile*/
                                             /*NoFavorites mobile*/
 @media (max-width: 500px) {
     .noFavorites img {
@@ -447,29 +464,4 @@ table tbody button {
         gap: 1rem;
     }
 }
-                                            /*NoFavorites mobile*/
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip:rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-                                            /*scroll settings*/
-::-webkit-scrollbar {
-    width: .7rem; 
-    width: .5rem; 
-    background-color: var(--scrollbar);
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb);
-    border-radius: .3rem;
-    border-radius: 1rem;
-}
-                                            /*scroll settings*/
+                                            /*NoFavorites mobile*/ 
