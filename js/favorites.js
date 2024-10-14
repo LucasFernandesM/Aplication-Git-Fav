@@ -116,7 +116,7 @@ export class FavoriteViews extends Favorites {
                     </td>
                     <td class="repositories"> 10 </td>
                     <td class="followers"> 10 </td>
-                    <td><button class="remove">Remover</button></td>`
+                    <td><button class="remove">X</button></td>`
         return tr
     }
 

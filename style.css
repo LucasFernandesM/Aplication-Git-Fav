@@ -40,6 +40,15 @@ body * {
     color: var(--text-input);
 }
 
+main {
+    max-width: 100rem;
+    padding: 3rem 4rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+    background: var(--app-background);
+    box-shadow: rgba(6, 6, 12, 0.25) 0px 50px 100px -20px, rgb(0, 0, 0) 0px 30px 60px -30px, rgba(10, 37, 64, 0.925) 0px -2px 6px 0px inset;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -52,18 +61,9 @@ body * {
     border-width: 0;
 }
 
-#app {
-    max-width: 100rem;
-    padding: 3rem 4rem;
-    margin: 0 auto;
-    border-radius: 2rem;
-    background: var(--app-background);
-    box-shadow: rgba(6, 6, 12, 0.25) 0px 50px 100px -20px, rgb(0, 0, 0) 0px 30px 60px -30px, rgba(10, 37, 64, 0.925) 0px -2px 6px 0px inset;
-}
+                                            /* FavoritesHeader desktop  */
 
-                                                        /* header desktop  */
-
-header {
+.favoritesHeader {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -72,16 +72,7 @@ header {
     margin-bottom: 3rem;
 }
 
-header .logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-width: 35rem;
-    gap: 1rem;
-}
-
-header .logo h1{
+.favoritesHeader h2{
     font-size: 4.2rem;
     font-weight: 500;
     font-family: "Protest Strike", sans-serif;
@@ -89,23 +80,18 @@ header .logo h1{
     color: var(--text-logo);
 }
 
-
-header .logo img {
-    width: 3.5rem;
-}
-
-header p {
+.favoritesHeader p {
     font-size: 1.8rem;
 }
 
-header .search {
+.favoritesHeader .search {
     display:flex;
     align-items: center;
     width: 100%;
     gap: 1rem;
 }
 
-header .search input {
+.favoritesHeader .search input {
     font-weight: 400;
     color: var(--text-color);
 
@@ -119,13 +105,13 @@ header .search input {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-header .search input::placeholder {
+.favoritesHeader .search input::placeholder {
     font-size: 1.6rem;
     font-weight: 400;
     color:var(--text-color);
 }
 
-header .search button {
+.favoritesHeader .search button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,23 +133,19 @@ header .search button {
     cursor: pointer;
 }
 
-header .search button:hover {
+.favoritesHeader .search button:hover {
     background: var(--background-header-button-hover);
     color: var(--text-color);
 }
 
-header .search button:hover svg g path{
-    fill: var(--text-color);
-}
-
-header .search button img {
+.favoritesHeader .search button img {
     width: 1.8rem;
     height: 1.8rem;
 }
 
-                                                        /* header desktop  */
+                                            /* FavoritesHeader desktop  */
 
-                                                        /* header mobile  */
+                                            /* FavoritesHeader mobile  */
 
 @media (max-width: 1020px) {
     body {     
@@ -174,58 +156,40 @@ header .search button img {
         padding: 2rem;
     }
 
-    header {
+    .favoritesHeader {
         display: flex;
         flex-direction: column;
         gap: 2rem;
     }
-
-    header p {
-        text-align: center;
-    }
-
-    header .logo h1{
+    
+    .favoritesHeader h2{
         font-size: 3.6rem;
     }
 
-    header .search button {
+    .favoritesHeader p {
+        text-align: center;
+    }
+
+    .favoritesHeader .search button {
         font-size: 1.4rem;
     }
 
-    header .search button img {
+    .favoritesHeader .search button img {
         width: 1.4rem;
         height: 1.4rem;
     }
 }
 
-                                                        /* header mobile  */
+                                            /* header mobile  */
 
-
-main {
+                                            /*FavoritesTable desktop*/
+.favorites {
     max-width: 100rem;
     border-radius: 1rem;
     overflow: hidden;
 
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;   
 }
-
-
-                                            /*scroll settings*/
-
-::-webkit-scrollbar {
-    width: .5rem; 
-    background-color: var(--scrollbar);
-}
-   
-::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb);
-    border-radius: 1rem;
-}
-
-                                            /*scroll settings*/
-
-                                            /*table desktop*/
 
 table {
     width: 100%;
@@ -266,7 +230,6 @@ table tbody tr {
     background-color: var(--background-tr);
 }
 
-
 table tbody .user {
     display: flex;
     flex-direction: column;
@@ -296,11 +259,9 @@ table tbody button {
     color: var(--text-remove);
     cursor: pointer;
 }
+                                            /*FavoritesTable desktop*/
 
-                                            /*table desktop*/
-
-                                            /*table mobile*/
-
+                                            /*FavoritesTable mobile*/
 @media (max-width: 768px) {
     body {     
         padding: 3rem 0.5rem;
@@ -326,24 +287,24 @@ table tbody button {
         overflow-x: scroll;
     }
 }
+                                            /*FavoritesTable mobile*/
 
-                                            /*table mobile*/
-
+                                            /*NoFavorites desktop*/
 .noFavorites {
     background: var(--background-noFavorites);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6rem;
+    gap: 3rem;
     height: 40rem;
 }
 
 .noFavorites img {
-    width: 13.2rem;
+    width: 10rem;
 }
 
-.noFavorites h2 {
-    font-size: 4rem;
+.noFavorites span {
+    font-size: 3.2rem;
     font-weight: 700;
     color: var(--text-noFavorites);
 }
@@ -351,3 +312,20 @@ table tbody button {
 .hide {
     display: none;
 }
+                                            /*NoFavorites desktop*/
+
+                                            /*NoFavorites mobile*/
+@media (max-width: 500px) {
+    .noFavorites img {
+        width: 6rem;
+    }
+
+    .noFavorites span {
+        font-size: 2.2rem;
+    }
+
+    .noFavorites {
+        gap: 1rem;
+    }
+}
+                                            /*NoFavorites mobile*/

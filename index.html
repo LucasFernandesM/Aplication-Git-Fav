@@ -17,35 +17,30 @@
     <script src="js/main.js" type="module" defer></script>
 </head>
 <body>
-    <div id="app">
-        <header>
-            <div class="logo">
-                <img src="./assets/StarLogo.png" alt="Logomarca GitFav">
-                <h1>Github Favorites</h1>
-            </div>
+    <main id="app">
+        <section class="favoritesHeader">
+            <h2>Favoritos</h2>
 
-            <div>
-                <p>"Pesquise e adicione seus perfis favoritos do GitHub à sua lista pessoal!"</p>
-            </div>
+            <p>"Pesquise e adicione seus perfis favoritos do GitHub à sua lista pessoal!"</p>
 
             <div class="search">
-                <label for="search" class="sr-only">Digite o Github username que quer favoritar</label>
-                <input id="search" type="text" placeholder="Digite o Github username que quer favoritar">
+                <label for="search" class="sr-only">Digite o nome do perfil que quer favoritar</label>
+                <input id="search" type="text" placeholder="Digite o nome do perfil que quer favoritar">
                 <button>
-                    <img src="./assets/StarLogo.png" alt="Favorite Icon" width="24" height="24" />  
+                    <img src="./assets/StarLogo.png" alt="Favorite Icon"/>  
                     Favoritar 
                 </button>
             </div>
-        </header>
+        </section>
 
-        <main>
+        <section class="favorites">
             <table>
                 <thead>
                     <tr>
-                        <th>Usuário</th>
-                        <th>Repositories</th>
-                        <th>Followers</th>
-                        <th>Ação</th>
+                        <th>Perfis</th>
+                        <th>Repositórios</th>
+                        <th>Seguidores</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead> 
                 <tbody>
@@ -54,9 +49,9 @@
 
             <div class="noFavorites">
                 <img src="./assets/star.svg" alt="Icone de uma estrela">
-                <h2>Nenhum favorito ainda</h2>
+                <span>Nenhum favorito ainda</span>
             </div>
-        </main>       
-    </div>    
+        </section>       
+    </main>    
 </body>
 </html>
