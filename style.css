@@ -115,13 +115,13 @@ main {
 
 .container .text h1 {
     font-family: "Protest Strike", sans-serif;
-    font-size: 9rem;
+    font-size: 7rem;
     color: var(--text-title);
 }
 
 .container .text h1 span {
     font-family: "Protest Strike", sans-serif;
-    font-size: 9rem;
+    font-size: 7rem;
     color: var(--text-title-secondary);
 }
 
