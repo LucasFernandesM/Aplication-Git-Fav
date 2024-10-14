@@ -10,6 +10,8 @@
     --body-background: #141126;
     --app-background: #E0DFF2;
 
+    --text-title: #141126;
+    --text-title-secondary: #F5AA00;
     --text-color: #E0DFF2;
     --text-logo: #141126;
     --text-remove: #7C7EA6;
@@ -30,7 +32,6 @@
 
 body {
     background-color: var(--body-background);     
-    padding: 4rem 6rem;
 }
 
 body * {
@@ -41,28 +42,156 @@ body * {
 }
 
 main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+#app {
     max-width: 100rem;
     padding: 3rem 4rem;
-    margin: 0 auto;
+    margin: 4rem auto 0;
     border-radius: 2rem;
     background: var(--app-background);
     box-shadow: rgba(6, 6, 12, 0.25) 0px 50px 100px -20px, rgb(0, 0, 0) 0px 30px 60px -30px, rgba(10, 37, 64, 0.925) 0px -2px 6px 0px inset;
 }
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip:rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+                                            /* Banner desktop  */
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: url(./assets/backgroundBanner.jpg);
+    background-position-y: 68%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
 }
 
-                                            /* FavoritesHeader desktop  */
+.logo img {
+    width: 7rem;
+    height: 7rem;
+}
 
+.container {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--app-background);
+    border-radius: 2rem;
+    width: 100%;
+    max-width: 100rem;
+    background: transparent;
+    backdrop-filter: blur(0rem);
+    box-shadow: rgba(0, 0, 0, 0.288) 0px 5px 15px; 
+    overflow: hidden;
+    
+    transition: 1s;
+}
+
+.container .text {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem;
+
+    position: relative;
+    top: 500px;
+    transition: top 1s;
+}
+
+.container:hover {
+    backdrop-filter: blur(1rem);
+}
+
+.container:hover .text {
+    top: 0;
+}
+
+.container .text h1 {
+    font-family: "Protest Strike", sans-serif;
+    font-size: 9rem;
+    color: var(--text-title);
+}
+
+.container .text h1 span {
+    font-family: "Protest Strike", sans-serif;
+    font-size: 9rem;
+    color: var(--text-title-secondary);
+}
+
+.container .text .description {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.container .text .description h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-title);
+}
+
+.container .text .description p {
+    font: 2rem;
+    font-weight: 500;
+    color: var(--text-title);
+}
+                                            /* Banner desktop  */
+
+                                            /* Banner mobile  */
+@media (max-width: 768px) {
+    .logo img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .container .text {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .container .text h1 {
+        font-size: 5rem;
+        line-height: 4.5rem;
+        margin-bottom: -2rem;
+    }
+
+    .container .text h1 span {
+        font-size: 5rem;
+    }
+
+    .coontainer .text .description {
+        gap: 1rem;
+    }
+
+    .container .text .description h2 {
+        font-size: 2rem;
+    }
+
+    .container .text .description p {
+        font: 1.6rem;
+    }
+
+} 
+
+@media (max-width: 500px) {
+    .banner {
+        gap: 1rem;
+    }
+
+    .container .text {
+        padding: 2rem 1rem;
+    }
+}
+                                            /* Banner mobile  */
+
+                                            /* FavoritesHeader desktop  */
 .favoritesHeader {
     display: flex;
     flex-direction: column;
@@ -142,18 +271,13 @@ main {
     width: 1.8rem;
     height: 1.8rem;
 }
-
                                             /* FavoritesHeader desktop  */
 
                                             /* FavoritesHeader mobile  */
-
 @media (max-width: 1020px) {
-    body {     
-        padding: 3rem 2rem;
-    }
-
     #app {
         padding: 2rem;
+        margin: 2rem;
     }
 
     .favoritesHeader {
@@ -179,7 +303,6 @@ main {
         height: 1.4rem;
     }
 }
-
                                             /* header mobile  */
 
                                             /*FavoritesTable desktop*/
@@ -263,10 +386,6 @@ table tbody button {
 
                                             /*FavoritesTable mobile*/
 @media (max-width: 768px) {
-    body {     
-        padding: 3rem 0.5rem;
-    }
-
     table thead th {
         font-size: 1.6rem;
         padding: 1rem 0.5rem;
@@ -296,7 +415,7 @@ table tbody button {
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    height: 40rem;
+    height: 20rem;
 }
 
 .noFavorites img {
@@ -329,3 +448,28 @@ table tbody button {
     }
 }
                                             /*NoFavorites mobile*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+                                            /*scroll settings*/
+::-webkit-scrollbar {
+    width: .7rem; 
+    width: .5rem; 
+    background-color: var(--scrollbar);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: .3rem;
+    border-radius: 1rem;
+}
+                                            /*scroll settings*/

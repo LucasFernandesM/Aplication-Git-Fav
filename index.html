@@ -17,40 +17,58 @@
     <script src="js/main.js" type="module" defer></script>
 </head>
 <body>
-    <main id="app">
-        <section class="favoritesHeader">
-            <h2>Favoritos</h2>
-
-            <p>"Pesquise e adicione seus perfis favoritos do GitHub à sua lista pessoal!"</p>
-
-            <div class="search">
-                <label for="search" class="sr-only">Digite o nome do perfil que quer favoritar</label>
-                <input id="search" type="text" placeholder="Digite o nome do perfil que quer favoritar">
-                <button>
-                    <img src="./assets/StarLogo.png" alt="Favorite Icon"/>  
-                    Favoritar 
-                </button>
+    <section class="banner">
+        <div class="logo">
+            <a href="#main">
+                <img src="./assets/StarLogo.png" alt="Logo Github Favorites">
+            </a>
+        </div>
+        <div class="container">
+            <div class="text">
+                <h1>Github <span>Favorites</span></h1>
+                <div class="description">
+                    <h2>"Encontre, Salve e Acompanhe seus Desenvolvedores Favoritos no GitHub"</h2>
+                    <p>Explore perfis inspiradores no GitHub e crie sua lista personalizada de favoritos. Mantenha os desenvolvedores que mais admira sempre à mão e acompanhe seus repositórios e projetos de forma rápida e organizada, tudo em um só lugar!</p>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <main id="main">
+        <section id="app">
+            <section class="favoritesHeader">
+                <h2>Favoritos</h2>
 
-        <section class="favorites">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Perfis</th>
-                        <th>Repositórios</th>
-                        <th>Seguidores</th>
-                        <th>Excluir</th>
-                    </tr>
-                </thead> 
-                <tbody>
-                </tbody>
-            </table>
+                <p>"Pesquise e adicione seus perfis favoritos do GitHub à sua lista pessoal!"</p>
 
-            <div class="noFavorites">
-                <img src="./assets/star.svg" alt="Icone de uma estrela">
-                <span>Nenhum favorito ainda</span>
-            </div>
+                <div class="search">
+                    <label for="search" class="sr-only">Digite o nome do perfil que quer favoritar</label>
+                    <input id="search" type="text" placeholder="Digite o nome do perfil que quer favoritar">
+                    <button>
+                        <img src="./assets/StarLogo.png" alt="Favorite Icon"/>  
+                        Favoritar 
+                    </button>
+                </div>
+            </section>
+
+            <section class="favorites">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Perfis</th>
+                            <th>Repositórios</th>
+                            <th>Seguidores</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead> 
+                    <tbody>
+                    </tbody>
+                </table>
+
+                <div class="noFavorites">
+                    <img src="./assets/star.svg" alt="Icone de uma estrela">
+                    <span>Nenhum favorito ainda</span>
+                </div>
+            </section>
         </section>       
     </main>    
 </body>
