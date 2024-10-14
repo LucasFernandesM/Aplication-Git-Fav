@@ -354,6 +354,9 @@ table tbody button {
 
                                             /* Banner mobile  */
 @media (max-width: 768px) {
+    .banner {
+        justify-content: right;
+    }
     .logo img {
         width: 5rem;
         height: 5rem;
