@@ -69,6 +69,17 @@ main {
     align-items: center;
     gap: 2rem;
     padding: 2rem;
+    overflow: hidden;
+}
+
+.banner:hover .logo {
+    transition: 1s;
+    bottom: 0;
+}
+
+.logo {
+    position:relative;
+    bottom: 30rem;
 }
 
 .logo img {
@@ -100,14 +111,6 @@ main {
     align-items: center;
     gap: 2rem;
     padding: 5rem;
-
-    position: relative;
-    top: 0;
-    transition: top 1s;
-}
-
-.container:hover .text {
-    top: 0;
 }
 
 .container .text h1 {
