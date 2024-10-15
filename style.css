@@ -46,11 +46,14 @@ a {
 }
 
 main {
+    display: flex;
+    justify-content: center;
     width: 100%;
     min-height: 100vh;
 }
 
 .favoritesList {
+    width: 100%;
     max-width: 100rem;
     padding: 3rem 4rem;
     margin: 4rem auto 0;
@@ -159,6 +162,10 @@ main {
 }
                                             /* Banner */
                                             /* FavoritesHeader */
+.favoritesList {
+    margin: 2rem;
+}
+
 .favoritesHeader {
     display: flex;
     flex-direction: column;
@@ -477,6 +484,9 @@ footer p {
 
                                             /* FavoritesTable mobile*/
 @media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
     table thead th {
         font-size: 1.6rem;
         padding: 1rem 0.5rem;

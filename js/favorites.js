@@ -41,13 +41,17 @@ export class Favorites {
         try {
             const userExist = this.entries.find(entry => entry.login === username)
 
+            if(username.length == 0) {
+                throw new Error('Você não digitou o nome de nenhum perfil!')
+            }
+
             if(userExist) {
-                throw new Error('Usuário já consta na lista')
+                throw new Error('Perfil já consta na lista!')
             }
 
             const user = await GithubUsers.search(username)
             if(user.login === undefined){
-                throw new Error('Não encontramos esse usuário!')
+                throw new Error('Não encontramos esse perfil!')
             }
             
             this.entries = [user, ...this.entries]
@@ -68,13 +72,22 @@ export class FavoriteViews extends Favorites {
 
     onAdd() {
         const addButton = this.root.querySelector('.search button')
+        const input = this.root.querySelector('.search input')
 
-        addButton.onclick = () => {
-            const { value } = this.root.querySelector('.search input')
-
+        const handleAdd = () => {
+            const { value } = input
+            
             this.add(value)
-            search.value = ""
+            input.value = ""
         }
+
+        addButton.onclick = handleAdd
+
+        input.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                handleAdd()
+            }
+        })
     }
 
     update() {
