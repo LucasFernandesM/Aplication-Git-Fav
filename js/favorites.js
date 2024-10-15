@@ -87,8 +87,19 @@ export class FavoriteViews extends Favorites {
             row.querySelector('.user a').href = `https://github.com/${user.login}`
             row.querySelector('.user p').textContent = `${user.name}`
             row.querySelector('.user span').textContent = `${user.login}`
-            row.querySelector('.repositories').textContent = `${user.public_repos}`
-            row.querySelector('.followers').textContent = `${user.followers}`
+
+            const reposLink = document.createElement('a')
+            reposLink.href = `https://github.com/${user.login}?tab=repositories`
+            reposLink.target = "_blank"
+            reposLink.textContent = `${user.public_repos}`
+            row.querySelector('.repositories').append(reposLink)
+
+            const followersLink = document.createElement('a')
+            followersLink.href = `https://github.com/${user.login}?tab=followers`
+            followersLink.target = "_blank"
+            followersLink.textContent = `${user.followers}`
+            row.querySelector('.followers').append(followersLink)
+            
             row.querySelector('.remove').onclick = () => {
                 const remove = confirm('Tem certeza que deseja remover esse usuário?')
                 
@@ -107,14 +118,14 @@ export class FavoriteViews extends Favorites {
         const tr = document.createElement('tr')
         tr.innerHTML = 
                     `<td class="user">
-                        <img src="https://github.com/LucasFernandesM.png" alt="Imagem de usuário">
                         <a href="https://github.com/LucasFernandesM" target="_blank">
+                            <img src="https://github.com/LucasFernandesM.png" alt="Imagem de usuário">
                             <p>Lucas Fernandes</p>
                             <span>/LucasFernandesM</span>
                         </a>
                     </td>
-                    <td class="repositories">  </td>
-                    <td class="followers">  </td>
+                    <td class="repositories"> <a></a> </td>
+                    <td class="followers"> <a></a> </td>
                     <td><button class="remove">X</button></td>`
         return tr
     }

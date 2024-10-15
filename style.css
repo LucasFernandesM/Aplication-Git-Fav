@@ -290,7 +290,13 @@ table tbody .user {
     gap: 1rem;
 }
 
-table tbody .user img {
+table tbody .user a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table tbody .user a img {
     width: 5.6rem;
     height: 5.6rem;
     border-radius: 50%;
@@ -503,3 +509,12 @@ footer p {
     }
 }
                                             /*NoFavorites mobile*/ 
+    
+                                            /*Footer mobile*/
+@media (max-width: 500px) {
+    footer p {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+}
+    
