@@ -76,19 +76,23 @@ main {
     overflow: hidden;
 }
 
-.banner:hover .logo {
-    transition: 1s;
-    bottom: 0;
+.banner .logo {
+    position: absolute;
+    animation: slideIn 2s ease-out forwards;
 }
 
-.banner .logo {
-    position:relative;
-    bottom: 30rem;
+@keyframes slideIn {
+    0% {
+      top: -100%; /* Off-screen on the left */
+    }
+    100% {
+      top: 4%; /* Position inside the container */
+    }
 }
 
 .banner .logo img {
-    width: 7rem;
-    height: 7rem;
+    width: 6.5rem;
+    height: 6.5rem;
 }
 
 .container {
@@ -101,13 +105,17 @@ main {
     background: transparent;
     box-shadow: rgba(0, 0, 0, 0.288) 0px 5px 15px; 
     overflow: hidden;
-
     backdrop-filter: blur(0rem);
-    transition: 1s;
+    animation: blurIn 10s ease-in-out forwards;
 }
 
-.container:hover {
-    backdrop-filter: blur(2.5rem);
+@keyframes blurIn {
+    0% {
+        backdrop-filter: blur(0);
+    }
+    100% {
+        backdrop-filter: blur(3rem); 
+    }
 }
 
 .container .text {
@@ -388,11 +396,18 @@ footer p {
                                             /* FavoritesHeader mobile  */
 
                                             /* Banner mobile  */
+@media (max-width: 1020px) {
+    .container .text{
+        padding: 3rem;
+    }
+}
+
 @media (max-width: 768px) {
     .banner {
-        justify-content: right;
+        justify-content:center;
     }
-    .logo img {
+
+    .banner .logo img {
         width: 5rem;
         height: 5rem;
     }
@@ -429,11 +444,27 @@ footer p {
 
 @media (max-width: 500px) {
     .banner {
+        padding: 1rem 1rem;
         gap: 1rem;
     }
 
+    .banner .logo img {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
     .container .text {
         padding: 2rem 1rem;
+    }
+
+    .container .text h1 {
+        font-size: 3.8rem;
+    }
+
+    .container .text h1 span{
+        font-size: 3.8rem;
+    }
+    .container .text h2 {
+        font-size: 1.8rem;
     }
 }
                                             /* Banner mobile  */                                          
