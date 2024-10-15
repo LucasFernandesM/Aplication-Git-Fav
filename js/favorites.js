@@ -85,6 +85,7 @@ export class FavoriteViews extends Favorites {
             row.querySelector('.user img').src = `https://github.com/${user.login}.png`
             row.querySelector('.user img').alt = `Imagem de ${user.name}`
             row.querySelector('.user a').href = `https://github.com/${user.login}`
+            row.querySelector('.user p').textContent = `${user.name}`
             row.querySelector('.user span').textContent = `${user.login}`
             row.querySelector('.repositories').textContent = `${user.public_repos}`
             row.querySelector('.followers').textContent = `${user.followers}`
@@ -101,21 +102,19 @@ export class FavoriteViews extends Favorites {
         
         this.noFav()
     }
-    /*
-    row.querySelector('.user span').textContent = `/${user.login}`
-<span>LucasFernandesM</span>
-    */
+
     createRow() {
         const tr = document.createElement('tr')
         tr.innerHTML = 
                     `<td class="user">
                         <img src="https://github.com/LucasFernandesM.png" alt="Imagem de usuário">
                         <a href="https://github.com/LucasFernandesM" target="_blank">
-                            <span>LucasFernandesM</span>
+                            <p>Lucas Fernandes</p>
+                            <span>/LucasFernandesM</span>
                         </a>
                     </td>
-                    <td class="repositories"> 10 </td>
-                    <td class="followers"> 10 </td>
+                    <td class="repositories">  </td>
+                    <td class="followers">  </td>
                     <td><button class="remove">X</button></td>`
         return tr
     }
