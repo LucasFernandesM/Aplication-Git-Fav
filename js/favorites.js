@@ -73,6 +73,7 @@ export class FavoriteViews extends Favorites {
     onAdd() {
         const addButton = this.root.querySelector('.search button')
         const input = this.root.querySelector('.search input')
+        const suggestionsBox = this.root.querySelector('.suggestions');
 
         const handleAdd = () => {
             let { value } = input
@@ -95,6 +96,39 @@ export class FavoriteViews extends Favorites {
                 handleAdd()
             }
         })
+
+        input.addEventListener('input', async () => {
+            const query = input.value;
+    
+            if (query.length > 3) {
+                const suggestions = await GithubUsers.searchSuggestions(query);
+                this.showSuggestions(suggestions, input, suggestionsBox);
+            } else {
+                suggestionsBox.innerHTML = '';
+            }
+        });
+    }
+
+    showSuggestions(suggestions, input, suggestionsBox) {
+        suggestionsBox.innerHTML = ''; 
+    
+        suggestions.forEach(user => {
+            const suggestionItem = document.createElement('div');
+            suggestionItem.classList.add('suggestion-item');
+    
+            
+            suggestionItem.innerHTML = `
+                <img src="${user.avatar_url}" alt="${user.login}" width="3rem">
+                <span>${user.login}</span>
+            `;
+    
+            suggestionItem.addEventListener('click', () => {
+                input.value = user.login; 
+                suggestionsBox.innerHTML = ''; 
+            });
+    
+            suggestionsBox.appendChild(suggestionItem);
+        });
     }
 
     update() {

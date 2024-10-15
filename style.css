@@ -240,6 +240,40 @@ main {
     width: 1.8rem;
     height: 1.8rem;
 }
+
+.suggestions {
+    
+    max-height: 20rem;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+    background: white;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.suggestion-item img {
+    width: 4rem;
+    border-radius: 50%;
+    border: 2px solid var(--body-background);
+}
+
+.suggestion-item:hover {
+    background-color: var(--background-thead);
+}
+
+.suggestion-item span {
+    font-weight: 600;
+    color: var(--text-title);
+}
                                             /* FavoritesHeader */
                                             /* FavoritesTable */
 .favorites {
@@ -372,12 +406,12 @@ footer p {
 ::-webkit-scrollbar {
     width: .7rem; 
     width: .5rem; 
+    border-radius: 1rem;
     background-color: var(--scrollbar);
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-thumb);
-    border-radius: .3rem;
     border-radius: 1rem;
 }
                                             /*scroll settings*/
@@ -527,4 +561,4 @@ footer p {
         font-size: 1.2rem;
     }
 }
-    
+
