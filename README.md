@@ -1,8 +1,8 @@
-<h1 align="center"> Git Favorites </h1>
+<h1 align="center"> Github Favorites </h1>
 
 <p align="center">
-Application that allows the user to add their favorite github profiles to a list <br/>
-With a simple search using the username of the desired profile, the user has a list of profiles to consult and get inspired!
+"Encontre, salve e acompanhe seus Desenvolvedores Favoritos no GitHub"</br>
+Explore perfis inspiradores no GitHub e crie sua lista personalizada de favoritos. Mantenha os desenvolvedores que mais admira sempre à mão e acompanhe seus repositórios e projetos de forma rápida e organizada, tudo em um só lugar!
 </p>
 
 <p align="center">
@@ -31,22 +31,23 @@ This project was developed with the following technologies:
 - [HTML]
 - [CSS]
 - [JavaScript]
-- [Git and Github]
+- [Git]
 
 <br><br>
 <h2 align="left" id="Project"> <img src=https://github.com/user-attachments/assets/7ac4a526-7c35-4f2d-a851-413c7f515e2c alt="Project Icon" style="width:28px;">&nbsp;&nbsp; Project </h2>
 
-  - It's purpose is to create a list of the user's favorite profiles </br>
-  - Search carried out in a simple way, typing username of the desired profile and clicking favorite </br>
-  - If the username entered does not exist or is entered twice, the application generates an alert </br>
-  - After to favorite, we have photo, username, number of followers, number of repositories and link to profile visible on the screen </br>
-  - Github API was used to fetch information from users and make it available in the application </br>
-  - Project developed during the Full-stack Training course via the platform [Rocketseat](https://app.rocketseat.com.br) </br>
+  - Add favorite profiles through a simple search by username or URL.</br>
+  - Autocomplete, automatic suggestions as you type.</br>
+  - Smart validations, alerts the user if they forget to type in the search field, if they type a profile already listed or if the profile does not exist.</br>
+  - Displays complete information in the list: photo and username, number of followers, repositories, and option to delete. With direct links to profile, repository page and followers page.
+  - Remove favorite profiles at any time.</br>
+  - Local storage, your list is saved in the browser, ensuring that it remains available even after reloading.</br>
+  - Responsive design, optimized for any device. </br>
 
 <br><br>
 <h2 align="left" id="Link-to-view"> <img src=https://github.com/user-attachments/assets/01c56b54-2205-4397-8f3a-ee4474e317ff alt="ProjectIcon" style="width:26px;">&nbsp;&nbsp;   Link to view </h2>
 
-[Git Favorites](https://lucasfernandesm.github.io/Git-Fav-App/)
+[Github Favorites](https://lucasfernandesm.github.io/Git-Fav-App/)
 
 <br><br>
 ## :memo: License
