@@ -75,7 +75,14 @@ export class FavoriteViews extends Favorites {
         const input = this.root.querySelector('.search input')
 
         const handleAdd = () => {
-            const { value } = input
+            let { value } = input
+
+            const githubUrlPattern = /https?:\/\/(www\.)?github\.com\/([a-zA-Z0-9-]+)(\/.*)?/;
+            const match = value.match(githubUrlPattern);
+
+            if (match) {
+                value = match[2];
+            }
             
             this.add(value)
             input.value = ""
